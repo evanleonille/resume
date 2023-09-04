@@ -70,6 +70,16 @@
     font-size: 16px;
     line-height: 1.5;
   }
+
+  .two-column {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    flex-basis: 50%; 
+    padding: 10px; 
+  }
 </style>
 </head>
 <body>
@@ -99,22 +109,26 @@
       <p><strong>Bachelor of Science in Information Technology</strong><br>Mindanao State university<br>Graduated: May 2024</p>
       <p><strong>Science Technology Engineering Mathematics</strong><br>Polomolok National High School<br>Graduated: March 2014</p>
     </div>
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML, CSS</li>
-        <li>Play Bass Guitar</li>
-        <li>Github Pages</li>
-        <li>Computer Assembly/Dissassembly</li>
-        <li>Video Editing</li>
-        <li>Photography</li>
-      </ul>
+    <div class="section two-column">
+      <div class="column"> 
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML, CSS</li>
+          <li>Play Bass Guitar</li>
+          <li>Github Pages</li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul>
+          <li>Computer Assembly/Dissassembly</li>
+          <li>Video Editing</li>
+          <li>Photography</li>
+        </ul>
+      </div>
     </div>
     <div class="section">
       <h2>Projects</h2>
       <p><strong>Orphanage Management System</strong><br>Designed and developed a Orphanage Management System to easily management of Confidential files.</p>
-      <p><strong>E-Commerce Website Redesign</strong><br>Collaborated with a team to redesign the user interface of an e-commerce website, resulting in a 20% increase in conversion rates.</p>
-    </div>
     <div class="section">
       <h2>Experience</h2>
       <p><strong>Work Immersion</strong><br>2 weeks in Municipal Health Office.</p>
