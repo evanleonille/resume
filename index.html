@@ -91,10 +91,11 @@
     padding: 10px;
   }
 /*   pest game */
-  #game-container {
-            position: relative;
+#game-container {
+            position: absolute;
             width: 100%;
             height: 100vh;
+            overflow: hidden;
         }
         .pest {
             position: absolute;
@@ -103,6 +104,11 @@
             background-color: red;
             border-radius: 50%;
             cursor: pointer;
+        }
+        #controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
 </style>
 </head>
@@ -165,9 +171,16 @@
 <script src="https://kit.fontawesome.com/d050a6d764.js" crossorigin="anonymous"></script>
 <!--   pest game -->
 <div id="game-container"></div>
+    <div id="controls">
+        <button id="startButton">Start Game</button>
+        <button id="endButton" disabled>End Game</button>
+    </div>
     <script>
         const gameContainer = document.getElementById('game-container');
+        const startButton = document.getElementById('startButton');
+        const endButton = document.getElementById('endButton');
         let score = 0;
+        let gameInterval;
 
         function createPest() {
             const pest = document.createElement('div');
@@ -184,13 +197,28 @@
                 gameContainer.removeChild(pest);
             });
             gameContainer.appendChild(pest);
+
+            // Remove the pest after 5 seconds
+            setTimeout(() => {
+                gameContainer.removeChild(pest);
+            }, 5000);
         }
 
         function updateScore() {
             document.title = `Pest Game - Score: ${score}`;
         }
 
-        setInterval(createPest, 1000);
+        startButton.addEventListener('click', () => {
+            startButton.disabled = true;
+            endButton.disabled = false;
+            gameInterval = setInterval(createPest, 1000);
+        });
+
+        endButton.addEventListener('click', () => {
+            startButton.disabled = false;
+            endButton.disabled = true;
+            clearInterval(gameInterval);
+        });
 
         updateScore();
     </script>
