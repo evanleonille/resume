@@ -90,6 +90,20 @@
     flex: 1; 
     padding: 10px;
   }
+/*   pest game */
+  #game-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .pest {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
 </style>
 </head>
 <body>
@@ -149,6 +163,36 @@
   </div>
 </div>
 <script src="https://kit.fontawesome.com/d050a6d764.js" crossorigin="anonymous"></script>
-<script src="node.js"></script>
+<!--   pest game -->
+<div id="game-container"></div>
+    <script>
+        const gameContainer = document.getElementById('game-container');
+        let score = 0;
+
+        function createPest() {
+            const pest = document.createElement('div');
+            pest.className = 'pest';
+            const maxX = window.innerWidth - 50;
+            const maxY = window.innerHeight - 50;
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            pest.style.left = randomX + 'px';
+            pest.style.top = randomY + 'px';
+            pest.addEventListener('click', () => {
+                score++;
+                updateScore();
+                gameContainer.removeChild(pest);
+            });
+            gameContainer.appendChild(pest);
+        }
+
+        function updateScore() {
+            document.title = `Pest Game - Score: ${score}`;
+        }
+
+        setInterval(createPest, 1000);
+
+        updateScore();
+    </script>
 </body>
 </html>
