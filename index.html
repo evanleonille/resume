@@ -42,7 +42,7 @@
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: #3498db;
-    background-image: src="./picture.jpeg";
+    background-image: src="picture.jpeg";
     background-size: cover;
   }
   
@@ -93,7 +93,7 @@
 /*   pest game */
 #game-container {
             position: absolute;
-            width: 200%;
+            width: 100%;
             left: 2%;
             height: 150%;
             overflow: hidden;
@@ -102,7 +102,7 @@
             position: absolute;
             width: 50px;
             height: 50px;
-            background-color: red;
+            background-color: blue;
             border-radius: 50%;
             cursor: pointer;
         }
@@ -202,7 +202,7 @@
             // Remove the pest after 5 seconds
             setTimeout(() => {
                 gameContainer.removeChild(pest);
-            }, 5000);
+            }, 10000);
         }
 
         function updateScore() {
