@@ -265,51 +265,52 @@
     
 <!--     pest game----------------------------------------------------------- -->
    
-      const gameContainer = document.getElementById('game-container');
-      const startButton = document.getElementById('startButton');
-      const endButton = document.getElementById('endButton');
-      let score = 0;
-      let gameInterval;
-
-      function createPest() {
-        const pest = document.createElement('div');
-        pest.className = 'pest';
-        const maxX = window.innerWidth - 50;
-        const maxY = window.innerHeight - 50;
-        const randomX = Math.random() * maxX;
-        const randomY = Math.random() * maxY;
-        pest.style.left = randomX + 'px';
-        pest.style.top = randomY + 'px';
-        pest.addEventListener('click', () => {
-          score++;
-          updateScore();
-          gameContainer.removeChild(pest);
-        });
-        gameContainer.appendChild(pest);
-
-        // Remove the pest after 5 seconds
-        setTimeout(() => {
-          gameContainer.removeChild(pest);
-        }, 10000);
-      }
-
-      function updateScore() {
-        document.title = `Resume - Score: ${score}`;
-      }
-
-      startButton.addEventListener('click', () => {
-        startButton.disabled = true;
-        endButton.disabled = false;
-        gameInterval = setInterval(createPest, 1000);
+    const gameContainer = document.getElementById('game-container');
+    const startButton = document.getElementById('startButton');
+    const endButton = document.getElementById('endButton');
+    let score = 0;
+    let gameInterval;
+    
+    function createPest() {
+      const pest = document.createElement('div');
+      pest.className = 'pest';
+      const maxX = document.body.clientWidth - 50;
+      const maxY = document.body.clientHeight - 50;
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+      pest.style.left = randomX + 'px';
+      pest.style.top = randomY + 'px';
+      pest.addEventListener('click', () => {
+        score++;
+        updateScore();
+        gameContainer.removeChild(pest);
       });
+      gameContainer.appendChild(pest);
+    
+      // Remove the pest after 10 seconds
+      setTimeout(() => {
+        gameContainer.removeChild(pest);
+      }, 10000);
+    }
+    
+    function updateScore() {
+      document.title = `Resume - Score: ${score}`;
+    }
+    
+    startButton.addEventListener('click', () => {
+      startButton.disabled = true;
+      endButton.disabled = false;
+      gameInterval = setInterval(createPest, 1000);
+    });
+    
+    endButton.addEventListener('click', () => {
+      startButton.disabled = false;
+      endButton.disabled = true;
+      clearInterval(gameInterval);
+    });
+    
+    updateScore();
 
-      endButton.addEventListener('click', () => {
-        startButton.disabled = false;
-        endButton.disabled = true;
-        clearInterval(gameInterval);
-      });
-
-      updateScore();
     </script>
 </body>
 
