@@ -1,227 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariquit's Resume</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #03254c;
-  }
-  .resume {
-    width: 210mm;
-    height: 297mm;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    display: flex;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mariquit's Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0652a8;
+      
+    }
+
+    .resume {
+      width: 210mm;
+      height: 297mm;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      display: flex;
+      border-radius: 10px;
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+
     .sidebar {
-            width: 25%;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #2a9df4;
-        }
+      width: 25%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #2a9df4;
+      
+    }
+    .sidebar .logo{
+      display: flex;
+      width: 100%;
+      font-size: 16px;
+      color: aliceblue;
+    }
+      .sidebar .logo i{
+        margin-right: 10px;
+        color: rgb(201, 199, 199);
+      }
 
-        .logo {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-  .profile-picture {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: #3498db;
-    background-image: url("./picture.jpeg");
-    background-size: cover;
-  }
-  
-  #Sfont{
-      width:;
-  }
-  
-  .content {
-    flex-grow: 1;
-    padding-left: 20px;
-  }
-  .header {
-    text-align: left;
-  }
-  .name {
-    font-size: 28px;
-    margin-top: 10px;
-    color: #333;
-  }
-  .contact {
-    text-align: left;
-    color: black;
-  }
-  .section {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #ccc;
-  }
-  .section h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #3498db;
-  }
-  .section p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.5;
-  }
+    .logo {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
 
-  .two-column {
-    display: flex;
-  }
+    .profile-picture {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      background-color: #3498db;
+      background-image: url("./picture.jpeg");
+      background-size: cover;
+    }
 
-  .column {
-    flex: 1; 
-    padding: 10px;
-  }
-/*   pest game */
-#game-container {
-            position: absolute;
-            width: 100%;
-            left: 2%;
-            height: 150%;
-            overflow: hidden;
-        }
-        .pest {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: blue;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        #controls {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-</style>
-</head>
-<body>
-<div class="resume">
+    #Sfont {
+      width: ;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding-left: 20px;
+    }
+
+    .header {
+      text-align: left;
+    }
+
+    .name {
+      font-size: 28px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .contact {
+      text-align: left;
+      color: black;
+    }
+
+    .section {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #3498db;
+    }
+
+    .section p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .two-column {
+      display: flex;
+    }
+
+    .column {
+      flex: 1;
+      padding: 10px;
+    }
+
+    /*   pest game -----------------------------------------------------------------*/
     
-  <div class="sidebar" id="">
-        <div class="profile-picture"></div>
-        <div class="logo">
-            <i class="fa-regular fa-envelope"></i> evanleonille@gmail.com</div>
-        <div class="logo">
-            <i class="fas fa-phone"></i> +639913959427</div>
-        <div class="logo">
-            <i class="fa-brands fa-github"></i> github.com/evanleonille</div>
-        <div class="logo">
-            <i class="fa-solid fa-image-portrait"></i> myportfolio.com</div>
-    </div>
-  <div class="content">
-    <div class="section">
-      <h2>Summary</h2>
-      <p>Passionate and motivated professional with experience in web development. Has a Minimal skills in HTML, and CSS. Dedicated to creating user-friendly and visually appealing websites.</p>
-    </div>
-    <div class="section">
-      <h2>Experience</h2>
-      <p><strong>HTML Frontend</strong><br>Capstone 1<br>2022 - 2023</p>
-      <p>• Developed and maintained responsive and dynamic websites<br>• Collaborated with design and marketing teams to implement website features</p>
-    </div>
-    <div class="section">
-      <h2>Education</h2>
-      <p><strong>Bachelor of Science in Information Technology</strong><br>Mindanao State university<br>Graduated: May 2024</p>
-      <p><strong>Science Technology Engineering Mathematics</strong><br>Polomolok National High School<br>Graduated: March 2014</p>
-    </div>
-    <div class="section two-column">
-      <div class="column"> 
-        <h2>Skills</h2>
-        <ul>
-          <li>HTML, CSS</li>
-          <li>Play Bass Guitar</li>
-          <li>Github Pages</li>
-        </ul>
+    #game-container {
+      position: absolute;
+      width: 100%;
+      left: 2%;
+      height: 150%;
+      overflow: hidden;
+    }
+
+    .pest {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+/*     mouse trail ---------------------------------------------------------------------------------- */
+    .mouse-trail {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #797EF6;
+    border-radius: 50%;
+    pointer-events: none;
+    overflow: hidden;
+}
+    
+    
+  </style>
+</head>
+
+<body>
+  <div class="resume">
+
+    <div class="sidebar" id="">
+      <div class="profile-picture"></div>
+      <div class="logo">
+        <i class="fa-regular fa-envelope"></i> <span>evanleonille@gmail.com</span>
       </div>
-      <div class="column">
-        <h2>Skills</h2>
-        <ul>
-          <li>Computer Assembly/Dissassembly</li>
-          <li>Video Editing</li>
-          <li>Photography</li>
-        </ul>
+      <div class="logo">
+        <i class="fa-brands fa-github"></i> 
+        <span>github.com/evanleonille</span>
+      </div>
+      <div class="logo">
+        <i class="fas fa-phone"></i> <span>+639913959427</span>
+      </div>
+      <div class="logo">
+        <i class="fa-solid fa-image-portrait"></i>
+        <span>myportfolio.com</span> 
       </div>
     </div>
-    <div class="section">
-      <h2>Projects</h2>
-      <p><strong>Orphanage Management System</strong><br>Designed and developed a Orphanage Management System to easily management of Confidential files.</p>
-    <div class="section">
-      <h2>Experience</h2>
-      <p><strong>Work Immersion</strong><br>2 weeks in Municipal Health Office.</p>
+    <div class="content">
+      <div class="section">
+        <h2>Summary</h2>
+        <p>Passionate and motivated professional with experience in web development. Has a Minimal skills in HTML, and
+          CSS. Dedicated to creating user-friendly and visually appealing websites.</p>
+      </div>
+      <div class="section">
+        <h2>Experience</h2>
+        <p><strong>HTML Frontend</strong><br>Capstone 1<br>2022 - 2023</p>
+        <p>• Developed and maintained responsive and dynamic websites<br>• Collaborated with design and marketing teams
+          to implement website features</p>
+      </div>
+      <div class="section">
+        <h2>Education</h2>
+        <p><strong>Bachelor of Science in Information Technology</strong><br>Mindanao State university<br>Graduated: May
+          2024</p>
+        <p><strong>Science Technology Engineering Mathematics</strong><br>Polomolok National High School<br>Graduated:
+          March 2014</p>
+      </div>
+      <div class="section two-column">
+        <div class="column">
+          <h2>Skills</h2>
+          <ul>
+            <li>HTML, CSS</li>
+            <li>Play Bass Guitar</li>
+            <li>Github Pages</li>
+          </ul>
+        </div>
+        <div class="column">
+          <h2>Skills</h2>
+          <ul>
+            <li>Computer Assembly/Dissassembly</li>
+            <li>Video Editing</li>
+            <li>Photography</li>
+          </ul>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Projects</h2>
+        <p><strong>Orphanage Management System</strong><br>Designed and developed a Orphanage Management System to
+          easily management of Confidential files.</p>
+        <div class="section">
+          <h2>Experience</h2>
+          <p><strong>Work Immersion</strong><br>2 weeks in Municipal Health Office.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<script src="https://kit.fontawesome.com/d050a6d764.js" crossorigin="anonymous"></script>
-<!--   pest game -->
-<div id="game-container"></div>
+    <script src="https://kit.fontawesome.com/d050a6d764.js" crossorigin="anonymous"></script>
+
+    
+    <!--   pest game ------------------------------------------------------------------------------------------------------->
+
+    <div class="container">
+        <div class="mouse-trail"></div>
+    </div>
+    <div id="game-container"></div>
     <div id="controls">
-        <button id="startButton">Start Game</button>
-        <button id="endButton" disabled>End Game</button>
+      <button id="startButton">Start Game</button>
+      <button id="endButton" disabled>End Game</button>
     </div>
-    <script>
-        const gameContainer = document.getElementById('game-container');
-        const startButton = document.getElementById('startButton');
-        const endButton = document.getElementById('endButton');
-        let score = 0;
-        let gameInterval;
+<!-- mouse trail ------------------------------------------------- -->
+<script>
+    document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
 
-        function createPest() {
-            const pest = document.createElement('div');
-            pest.className = 'pest';
-            const maxX = window.innerWidth - 50;
-            const maxY = window.innerHeight - 50;
-            const randomX = Math.random() * maxX;
-            const randomY = Math.random() * maxY;
-            pest.style.left = randomX + 'px';
-            pest.style.top = randomY + 'px';
-            pest.addEventListener('click', () => {
-                score++;
-                updateScore();
-                gameContainer.removeChild(pest);
-            });
-            gameContainer.appendChild(pest);
+    const trailElement = document.createElement('div');
+    trailElement.classList.add('mouse-trail');
+    trailElement.style.left = `${mouseX}px`;
+    trailElement.style.top = `${mouseY}px`;
 
-            // Remove the pest after 5 seconds
-            setTimeout(() => {
-                gameContainer.removeChild(pest);
-            }, 10000);
-        }
+    document.body.appendChild(trailElement);
 
-        function updateScore() {
-            document.title = `Pest Game - Score: ${score}`;
-        }
+    setTimeout(() => {
+        trailElement.remove();
+    }, 500);
+});
 
-        startButton.addEventListener('click', () => {
-            startButton.disabled = true;
-            endButton.disabled = false;
-            gameInterval = setInterval(createPest, 1000);
+      
+    
+<!--     pest game----------------------------------------------------------- -->
+   
+      const gameContainer = document.getElementById('game-container');
+      const startButton = document.getElementById('startButton');
+      const endButton = document.getElementById('endButton');
+      let score = 0;
+      let gameInterval;
+
+      function createPest() {
+        const pest = document.createElement('div');
+        pest.className = 'pest';
+        const maxX = window.innerWidth - 50;
+        const maxY = window.innerHeight - 50;
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+        pest.style.left = randomX + 'px';
+        pest.style.top = randomY + 'px';
+        pest.addEventListener('click', () => {
+          score++;
+          updateScore();
+          gameContainer.removeChild(pest);
         });
+        gameContainer.appendChild(pest);
 
-        endButton.addEventListener('click', () => {
-            startButton.disabled = false;
-            endButton.disabled = true;
-            clearInterval(gameInterval);
-        });
+        // Remove the pest after 5 seconds
+        setTimeout(() => {
+          gameContainer.removeChild(pest);
+        }, 10000);
+      }
 
-        updateScore();
+      function updateScore() {
+        document.title = `Pest Game - Score: ${score}`;
+      }
+
+      startButton.addEventListener('click', () => {
+        startButton.disabled = true;
+        endButton.disabled = false;
+        gameInterval = setInterval(createPest, 1000);
+      });
+
+      endButton.addEventListener('click', () => {
+        startButton.disabled = false;
+        endButton.disabled = true;
+        clearInterval(gameInterval);
+      });
+
+      updateScore();
     </script>
 </body>
+
 </html>
